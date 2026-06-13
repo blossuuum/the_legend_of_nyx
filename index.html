@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Legend of Nyx</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem('bluum-theme');
+      if (!t && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      document.documentElement.setAttribute('data-theme', t || 'light');
+    })();
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style-dark.css"/>
   <link rel="icon" type="image/png" href="images/icon.png" />
 </head>
 <body>
@@ -13,13 +21,36 @@
   <!-- NAV HORIZONTALE EN HAUT -->
   <nav class="top-nav" aria-label="Navigation principale">
     <a class="nav-logo" href="#home"><img src="images/logo.png" width="400"></a>
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-            <li><a href="lore.html">Lore</a></li>
-      <li><a href="about.html">About</a></li>
-
-    </ul>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Changer de thème">
+        <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+        <span class="theme-icon theme-icon-dark" aria-hidden="true">☾</span>
+      </button>
+      <button class="burger-btn" id="burgerBtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <aside class="mobile-menu-panel" aria-label="Menu de navigation">
+      <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Fermer le menu">✕</button>
+      <p class="mobile-menu-label">✦ Navigation</p>
+      <nav class="mobile-menu-nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
 
   <!-- NAV LATÉRALE (DOTS) À DROITE -->
   <aside class="side-nav" aria-label="Navigation par sections">
@@ -56,7 +87,7 @@
   <section id="about">
     <div class="about-inner">
       <div class="about-portrait reveal">
-        <div class="portrait-frame"><img src="images/bluum1.jpg" width="450"></div>
+        <div class="portrait-frame"><img src="images/bluum1.jpg" alt="Bluum"></div>
         <div class="portrait-tag">@TheOgress</div>
       </div>
       <div class="about-content reveal" style="transition-delay:0.15s">
@@ -224,6 +255,8 @@
     <p>✿ Bluum — Original Character ✿ &nbsp;|&nbsp; Fait avec <span>♡</span></p>
   </footer>
 
+  <script src="theme.js"></script>
+  <script src="menu.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
