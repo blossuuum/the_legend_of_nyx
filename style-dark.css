@@ -1,0 +1,250 @@
+/* ════════════════════════════════════════
+   BLUUM — Thème sombre (flat design)
+   Activé via data-theme="dark" sur <html>
+════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  --blush: #3d282d;
+  --rose: #d4899f;
+  --deep-rose: #e8a0b8;
+  --petal: #2e1f23;
+  --cream: #181014;
+  --text: #f0e4ea;
+  --muted: #b08a9a;
+  --white: #201519;
+}
+
+[data-theme="dark"] html {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='4' fill='%23e8a0b8'/%3E%3C/svg%3E") 10 10, auto;
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.06;
+}
+
+/* ─── Navigation ─── */
+[data-theme="dark"] nav.top-nav {
+  background: var(--white);
+  border-bottom-color: rgba(232, 160, 184, 0.12);
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .side-nav-line {
+  background: var(--rose);
+  opacity: 0.35;
+}
+
+[data-theme="dark"] .side-dot::after {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.2);
+}
+
+/* ─── Home ─── */
+[data-theme="dark"] #home {
+  background: url('images/banner.jpg') center center / cover no-repeat;
+}
+
+[data-theme="dark"] #home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  opacity: 0.82;
+  z-index: 1;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .home-deco,
+[data-theme="dark"] .deco-1,
+[data-theme="dark"] .deco-2,
+[data-theme="dark"] .deco-3 {
+  display: none;
+}
+
+[data-theme="dark"] .scroll-line {
+  background: var(--rose);
+  opacity: 0.5;
+}
+
+[data-theme="dark"] .home-btn:hover {
+  color: var(--cream);
+}
+
+/* ─── Sections ─── */
+[data-theme="dark"] #lore {
+  background: var(--cream);
+}
+
+[data-theme="dark"] .page-section[style] {
+  background: var(--cream) !important;
+}
+
+[data-theme="dark"] .page-section[style*="var(--white)"] {
+  background: var(--white) !important;
+}
+
+/* ─── About / Lore — Hero ─── */
+[data-theme="dark"] .about-hero,
+[data-theme="dark"] .lore-hero {
+  background: var(--cream);
+}
+
+[data-theme="dark"] .about-hero-deco,
+[data-theme="dark"] .lore-hero-deco {
+  display: none;
+}
+
+/* ─── Portraits & zones de dessin ─── */
+[data-theme="dark"] .portrait-frame,
+[data-theme="dark"] .char-portrait,
+[data-theme="dark"] .drawing-zone,
+[data-theme="dark"] .mi-drawing,
+[data-theme="dark"] .creatrice-drawing,
+[data-theme="dark"] .caract-portrait {
+  background: var(--petal);
+}
+
+[data-theme="dark"] .char-divider {
+  background: rgba(232, 160, 184, 0.2);
+}
+
+[data-theme="dark"] .vtuber-badge {
+  background: var(--petal);
+}
+
+/* ─── Timeline horizontale ─── */
+[data-theme="dark"] .timeline-track-line {
+  background: var(--rose);
+  opacity: 0.35;
+}
+
+[data-theme="dark"] .tl-dot {
+  border-color: var(--cream);
+}
+
+[data-theme="dark"] .tl-card-body {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.15);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .tl-card.active .tl-card-body {
+  box-shadow: none;
+}
+
+[data-theme="dark"] .tl-btn {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.25);
+  backdrop-filter: none;
+}
+
+/* ─── Personnages ─── */
+[data-theme="dark"] .char-portrait {
+  box-shadow: none;
+}
+
+[data-theme="dark"] .char-card:hover .char-portrait {
+  box-shadow: none;
+}
+
+/* ─── Footer ─── */
+[data-theme="dark"] footer {
+  background: var(--cream);
+  border-top-color: rgba(232, 160, 184, 0.12);
+}
+
+/* ─── Cartes ─── */
+[data-theme="dark"] .caract-card {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.15);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .caract-card:hover {
+  box-shadow: none;
+}
+
+[data-theme="dark"] .mi-drawing,
+[data-theme="dark"] .creatrice-drawing,
+[data-theme="dark"] .caract-portrait {
+  box-shadow: none;
+}
+
+[data-theme="dark"] .inline-quote {
+  background: var(--petal);
+}
+
+[data-theme="dark"] .inline-quote::before {
+  background: var(--cream);
+}
+
+/* ─── Timeline verticale ─── */
+[data-theme="dark"] .timeline-vertical::before {
+  background: var(--rose);
+  opacity: 0.35;
+}
+
+[data-theme="dark"] .tv-dot {
+  border-color: var(--cream);
+}
+
+[data-theme="dark"] .tv-card {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.15);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .tv-item:hover .tv-card {
+  box-shadow: none;
+}
+
+/* ─── Onglets Lore ─── */
+[data-theme="dark"] .lore-tab {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.25);
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .lore-tab:hover {
+  background: var(--petal);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .lore-tab.active {
+  background: var(--petal);
+  box-shadow: none;
+}
+
+/* ─── Bouton thème ─── */
+[data-theme="dark"] .theme-toggle {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.25);
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: var(--blush);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .burger-btn {
+  background: var(--white);
+  border-color: rgba(232, 160, 184, 0.25);
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .mobile-menu-panel {
+  background: var(--cream);
+  border-left-color: rgba(232, 160, 184, 0.15);
+}
+
+[data-theme="dark"] .mobile-menu-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] .mobile-menu-close:hover {
+  background: var(--blush);
+}
