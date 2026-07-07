@@ -103,3 +103,38 @@
       { threshold: 0.1 }
     );
     document.querySelectorAll('.reveal').forEach(r => revealObs.observe(r));
+
+    /* ══ THEME SOMBRE / CLAIR ══ */
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+// 1. Vérifie si l'utilisateur a déjà choisi un thème par le passé, 
+// sinon on prend le thème de son système d'exploitation.
+const currentTheme = localStorage.getItem('theme') || 
+                     (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+// 2. Fonction pour appliquer le thème
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  if (themeIcon) {
+    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+}
+
+// 3. Appliquer le thème directement au chargement
+applyTheme(currentTheme);
+
+// 4. Action quand on clique sur le bouton
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    // On regarde quel est le thème actuel sur la page
+    let activeTheme = document.documentElement.getAttribute('data-theme');
+    
+    // On inverse le thème
+    let newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+    
+    // On l'applique et on le sauvegarde
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
